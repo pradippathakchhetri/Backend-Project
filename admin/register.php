@@ -65,6 +65,10 @@ require('./config/config.php')
             echo "<div class='alert alert-danger' role='alert'>Please fill  all fields..</div>";
             header("refresh:2; url=register.php");
         }
+        if ($msg =="registerfail"){
+            echo "<div class='alert alert-danger' role='alert'>Username or email  already exists! Please try another one.</div>";
+            header("refresh:2; url=register.php");
+        }
     }
     ?>
 <form action="auth/register.php" class="" method="POST" enctype="multipart/form-data">
@@ -88,7 +92,7 @@ require('./config/config.php')
             <button type="submit" class="text-white btn btn-danger ">Register</button>
         </div>
         <div class="text-white border-top text-center">
-            <p> Already have account?Please<a class="text-decoration-none" href="index.php"> Log in</a>. </p>
+            <p> Already have account?Please<a class="text-decoration-none" href="./index.php"> Log in</a>. </p>
         </div>
     </form>
 </div>

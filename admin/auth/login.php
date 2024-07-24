@@ -5,9 +5,9 @@ require("../config/config.php");
     $email=$_POST["email"];
     $password=$_POST['password']; 
     
-    if($email !="" && $password != ""){
+    if($email !="" || $password != ""){
 $check = "SELECT * FROM users WHERE email = '$email' AND password ='$password'";
-$result=mysqli_query($conn,$check);
+$result = mysqli_query($conn,$check);
  if ($result->num_rows>0){
     $row = mysqli_fetch_assoc($result); 
     session_start();
